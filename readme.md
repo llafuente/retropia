@@ -17,3 +17,60 @@ Another project in mind is to transform all controllers to wireless.
 I have been lucky with very simple staff like sega master system and genesis
 (megadrive). The range I aim is nes/master system to ps3/xbox generation.
 Dreamcast VMU and N64 memory are the real problems atm. Still researching!
+
+
+## Nintendo
+
+### Gamecube
+
+* [controllers](nintendo/gamecube/controllers.md)
+
+### NES
+
+* [controllers](nintendo/nes/controllers.md)
+* [RGB](nintendo/nes/rgb.md)
+
+### SNES
+
+* [controllers](nintendo/super-nintendo/controllers.md)
+
+### Nintendo 64
+
+* [controllers](nintendo/nintendo-64/controllers.md)
+* [RGB](nintendo/nintendo-64/rgb.md)
+
+## Sega
+
+### Dreamcast
+
+* [Bios](sega/dreamcast/bios.md)
+* [controllers](sega/dreamcast/controllers.md)
+* [hdd](sega/dreamcast/hdd.md)
+
+### Game gear
+
+* [Backlight using DS screen](sega/game-gear/ds-backlight.md)
+* [Uso lipo batteries](sega/game-gear/li-po-batteries.md)
+
+### Master System
+
+* [controllers](sega/master-system/controllers.md)
+* [50-60Hz mod](sega/master-system/master-system-2/master-system-2-50-60-hz.md)
+* [LED power](sega/master-system/master-system-2/master-system-2-led-power.md)
+* [RGB](sega/master-system/master-system-2/master-system-2-rgb.md)
+
+### Megadrive (Genesis)
+
+* [controllers](sega/megadrive/controllers.md)
+* [RGB](sega/megadrive/rgb.md)
+
+### Saturn
+
+* [controllers](sega/saturn/controllers.md)
+* [RGB](sega/saturn/rgb.md)
+
+## Sony
+
+### Playstation 1 (PSOne, PSX)
+
+* [controllers](sony/psx/controllers.md)

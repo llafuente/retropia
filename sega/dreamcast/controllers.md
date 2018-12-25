@@ -4,11 +4,11 @@
 
 Female
 
-<img src="dreamcast-controller-socket-female.gif" />
+<img src="sega-dreamcast-controller-socket-female.gif" />
 
 Male
 
-<img src="dreamcast-controller-socket-male.gif" />
+<img src="sega-dreamcast-controller-socket-male.gif" />
 
 Pinouts
 
