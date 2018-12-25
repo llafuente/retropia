@@ -2,5 +2,4 @@
 
 Locate: SEGA / 315-5246 / 9223k7
 
-
 <img src="sega-master-system-315-5246-9223k7.jpg" />
