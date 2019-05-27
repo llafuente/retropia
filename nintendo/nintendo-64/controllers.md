@@ -3,9 +3,9 @@
 <img src="nintendo-64-controller.jpg" />
 <img src="nintendo-64-controller-2.jpg" />
 
-## nintendo 64 controller socket
+## nintendo 64 controller connector/socket
 
-Console side
+### Console side
 
 <img src="nintendo-64-console-side-socket.jpg" />
 
@@ -13,7 +13,7 @@ Console side
 * 2: Signal
 * 3: Ground
 
-Controller side:
+### Controller side:
 
 <img src="nintendo-64-controller-side-socket.jpg" />
 
@@ -21,9 +21,12 @@ Controller side:
 * 2: Signal
 * 3: Vcc (3.3v)
 
+NOTE. Vcc can be 3.3v, but console supplu 3.6v.
+We will use 3.3v because it's more common for implementing solutions.
+
 ## Protocol
 
-In its idle state the data line is high ( 3,6 V).
+In its idle state the data line is high (3,3v).
 
 Each bit that is transmitted takes 4 μs of time.
 
