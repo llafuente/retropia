@@ -52,4 +52,4 @@ reset to the first state in about 27us
 
 [Atari interface](https://deskthority.net/wiki/Atari_interface#Sega_16-bit)
 
-
+[How to communicate with a Genesis Multi-tap.](https://www.raphnet.net/divers/documentation/genesis_multitap.txt)
