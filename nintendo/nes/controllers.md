@@ -1,8 +1,9 @@
-# pad
+# Nintendo nes controller
 
-# pad extension map
+## pad cable
 
-| Cable color | function |
+| Cable color | Function |
+|-------------|----------|
 | Black       | Data     |
 | Green       | Clock    |
 | Yellow      | latch    |
@@ -10,7 +11,7 @@
 | White       | Ground   |
 
 
-# references
+## references
 
 [read nes controller with arduino](https://www.allaboutcircuits.com/projects/nes-controller-interface-with-an-arduino-uno/)
 [nes controllers info](http://problemkaputt.de/everynes.htm#controllersjoypads)

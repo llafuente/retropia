@@ -73,3 +73,5 @@ brevity.
 [Snes CONtroller Emulator using Arduino](https://github.com/jtrinklein/SConE)
 
 [NES/SNES protocol](http://uzebox.org/files/NES-controller-Hydra-Ch6All-v1.0.pdf)
+
+[Official SNES Controllers variations](https://boardgamegeek.com/wiki/page/thing:94408)
