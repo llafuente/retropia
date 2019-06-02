@@ -8,30 +8,36 @@
 
 ### Female socket (console)
 
+```
 /-----------\
 | 987654321 |
 |___________|
+```
 
-| pin # | Name | Function  |
-| 1     | VCC  | +5v (Out) |
-| 2     | D1   | Data 1    |
-| 3     | D0   | Data 0    |
+| pin # | Name | Function                    |
+|-------|------| ----------------------------|
+| 1     | VCC  | +5v (Out)                   |
+| 2     | D1   | Data 1                      |
+| 3     | D0   | Data 0                      |
 | 4     | S0   | Request (Select 1, aka TR)  |
-| 5     | S1   | Select (Select 0, aka TH)  |
-| 6     | S3   | Acknowledge (TL) |
-| 7     | D3   | Data 3    |
-| 8     | D2   | Data 2    |
-| 9     | GND  | Ground    |
+| 5     | S1   | Select (Select 0, aka TH)   |
+| 6     | S3   | Acknowledge (TL)            |
+| 7     | D3   | Data 3                      |
+| 8     | D2   | Data 2                      |
+| 9     | GND  | Ground                      |
 
 S0, S1 are console signal pins ( INPUT )
+
 S3 is a controller signal output ( OUTPUT )
+
 D1, D0, D2, D3 are Data pins, nibble by nibble ( OUTPUT )
 
 ## sega saturn 6 buttons controller (MK-80100 / MK-80114 / MK-80116 / MK-80301 / MK-80313 / RG-CP5 / RG-CP6)
 
 S3 = 5v always
 
-| S0  | S1  | D0 | d1    | d2    | d3     |
+| REQ | SEL | D0 | D1    | D2    | D3     |
+|-----|-----|----|-------|-------|--------|
 | Off | Off | Z  | Y     | X     | R      |
 | On  | Off | B  | C     | A     | Start  |
 | Off | On  | Up | Down  | Left  | Right  |
@@ -39,26 +45,26 @@ S3 = 5v always
 
 ## 3d control pad (Mk-80117 / HSS-0137)
 
-TH_SEL = S1
-TR_REQ = S0
-TL_ACK = S3
+| REQ  | SEL | ACK | D0 | D1    | D2    | D3     |
+|------|-----|-----|----|-------|-------|--------|
+| On   | On  | 0   | 0  | 0     | 0     | 0      |
+| Off  | Off | 1   | 0  | 1     | 0     | 0      |
+| On   | Off | 0   | Up | Down  | Left  | Right  |
+| Off  | Off | 1   | C  | B     | A     | Start  |
+| On   | Off | 0   | Z  | Y     | X     | R/1    |
+| Off  | Off | 1   | 1  | 1     | 1     | L/1    |
+| On   | Off | 0   | 0  | 0     | 0     | 0      |
+| Off  | Off | 1   | 1  | 0     | 0     | 0      |
 
-| REQ  | SEL  | ACK | D0 | d1    | d2    | d3     |
-| On   | On   | 0   | 0  | 0     | 0     | 0      |
-| Off  | Off  | 1   | 0  | 1     | 0     | 0      |
+First byte: hello!
 
-| On   | Off  | 0   | Up |  Down |  Left |  Right |
-| Off  | Off | 1   | Forward | Roundhouse | Short | Start |
-| On   | Off  | 0   | Fierce | Strong | Jab | R/1 |
-| Off  | Off | 1   | 1 | 1 | 1 | L/1 |
+Second/Third byte: buttons state
 
-| On   | Off | 0   | 0 | 0 | 0 | 0 |
-| Off  | Off | 1   | 1 | 0 | 0 | 0 |
-
+Fouth byte: bye!
 
 ## references
 
-[Saturn Control Pad](https://segaretro.org/Control_Pad_(Saturn)
+[Saturn Control Pad](https://segaretro.org/Control_Pad_\(Saturn\))
 
 [Saturn 3D Control Pad](https://segaretro.org/3D_Control_Pad)
 
