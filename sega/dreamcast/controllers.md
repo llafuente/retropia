@@ -1,23 +1,28 @@
-# dreamcast controllers spec
+# Sega Dreamcast controllers spec
 
-## dreamcast controller socket (Maple bus)
+## Socket: Maple bus
 
-### Controller
+The Maple Bus transfers the data serially. The serial protocol is of the synchronous variant, where each bit is explicitly clocked. In contrast to standard synchronous protocols, which use one wire for data and one for clock, the Maple Bus uses a scheme in which the two wires take turn in representing data and clock. Due to this scheme, the bandwidth for each signal is just 1MHz
+
+## Controller (HKT-7700)
 
 <img src="sega-dreamcast-controller-socket-male.gif" />
 
 Pinouts
 
-|---|-------|-----------------------------------------------------|
-| 1 | red   | serial data                                         |
-| 2 | blue  | +5V                                                 |
-| 3 | black | GND                                                 |
-| 4 | green | sense (connected to GND inside controller/keyboard) |
-| 5 | white | serial data (3v?)
+| Pin | Cable color | Usage                                               |
+|-----|-------------|-----------------------------------------------------|
+| 1   | red         | serial data                                         |
+| 2   | blue        | +5V                                                 |
+| 3   | black       | GND                                                 |
+| 4   | green       | sense (connected to GND inside controller/keyboard) |
+| 5   | white       | serial data (3v?)                                   |
 
 The comunication is done in two phases
-Phase 1: pin 1 is clock and pin 5 is data.
-Phase 2, pin 5 is clock and pin 1 is data.
+
+* Phase 1: pin 1 is clock and pin 5 is data.
+
+* Phase 2, pin 5 is clock and pin 1 is data.
 
 In each phase, which lasts for 0.5µs, a single bit of data is transferred
 
@@ -25,9 +30,7 @@ In each phase, which lasts for 0.5µs, a single bit of data is transferred
 
 <img src="sega-dreamcast-controller-socket-female.gif" />
 
-## Protocol (Maple Bus)
-
-The Maple Bus transfers the data serially. The serial protocol is of the synchronous variant, where each bit is explicitly clocked. In contrast to standard synchronous protocols, which use one wire for data and one for clock, the Maple Bus uses a scheme in which the two wires take turn in representing data and clock. Due to this scheme, the bandwidth for each signal is just 1MHz
+## Maple Bus: Protocol
 
 ### Idle
 
@@ -68,7 +71,7 @@ char maple_checksum(unsigned char *data, int size) {
 | Pin 1 | 1 | 1 | 1 | 0 | 1 | 0 | 1 | 0 | 1 |
 | Pin 5 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 
-## references
+## References
 
 [Maple bus patent](https://archive.org/stream/MaplePatent?ui=embed#page/n33/mode/2up)
 

@@ -1,12 +1,13 @@
-# sega master system controllers specs
+# Sega Master System (SMS) Controllers
 
-## master system controller socket (Arari port)
+## Socket: Arari port (DE-9 / DB-9)
 
 <img src="./atari-joystick-port.png" />
 
-No signal is needed unlike megadrive.
+No select signal is needed unlike megadrive.
 
 | Pin # | Signal Name |
+|-------|-------------|
 | 1     | D0          |
 | 2     | D1          |
 | 3     | D2          |
@@ -17,24 +18,28 @@ No signal is needed unlike megadrive.
 | 8     | GND         |
 | 9     | D5          |
 
+SMS use:
+* 0v signal => pressed
+* 5v signal => released
 
-* pressed = 0v
-* released = 5v
-
-## master system controller
+## Controller (MODEL-3020)
 
 <img src="master-system-controller.jpg" />
 
 <img src="master-system-controller-disassembled.jpg" />
 
-Pins used:
+SMS controller board wire pin 5 (5v) to all other pins.
 
-| D0              | Up    |
-| D1              | Down  |
-| D2              | Left  |
-| D3              | Right |
-| D4              | 1     |
-| D5              | 2     |
+When pressed pull down that pin to ground.
+
+| Pin # | Usage       |
+|-------|-------------|
+| D0    | Up          |
+| D1    | Down        |
+| D2    | Left        |
+| D3    | Right       |
+| D4    | 1           |
+| D5    | 2           |
 
 ## Light Phaser
 
@@ -42,11 +47,13 @@ Pins used:
 
 Pins used:
 
-| D4 | trigger      |
-| TH | light sensor |
+| Pin # | Usage        |
+|-------|--------------|
+| D4    | trigger      |
+| TH    | light sensor |
 
 
-# references
+## References
 
 [The Genesis / Megadrive Joypad Protocol](https://db-electronics.ca/console-tech/sega-genesis-megadrive/joypad/)
 
@@ -54,4 +61,6 @@ Pins used:
 
 [Light Phaser](https://segaretro.org/Light_Phaser)
 
+[DE-9 Port](https://segaretro.org/DE-9)
 
+[Nes controller mod to SMS](https://atariage.com/forums/topic/249794-tutorial-nes-controller-mod-to-work-on-sega-master-system/)

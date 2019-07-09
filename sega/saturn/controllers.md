@@ -1,12 +1,10 @@
-# saturn controllers spec
+# Sega Saturn controllers spec
 
-## sega saturn controller socket
-
-### Male socket (controller)
+## Male socket (controller)
 
 <img src="sega-saturn-controller-socket.gif" />
 
-### Female socket (console)
+## Female socket (console)
 
 ```
 /-----------\
@@ -32,7 +30,7 @@ S3 is a controller signal output ( OUTPUT )
 
 D1, D0, D2, D3 are Data pins, nibble by nibble ( OUTPUT )
 
-## sega saturn 6 buttons controller (MK-80100 / MK-80114 / MK-80116 / MK-80301 / MK-80313 / RG-CP5 / RG-CP6)
+## Sega Saturn 6 buttons controller (MK-80100 / MK-80114 / MK-80116 / MK-80301 / MK-80313 / RG-CP5 / RG-CP6)
 
 S3 = 5v always
 
@@ -43,7 +41,7 @@ S3 = 5v always
 | Off | On  | Up | Down  | Left  | Right  |
 | On  | On  | -  |  -    |  -    | L      |
 
-## 3d control pad (Mk-80117 / HSS-0137)
+## 3D Control pad (Mk-80117 / HSS-0137)
 
 | REQ  | SEL | ACK | D0 | D1    | D2    | D3     |
 |------|-----|-----|----|-------|-------|--------|
@@ -62,7 +60,7 @@ Second/Third byte: buttons state
 
 Fouth byte: bye!
 
-## references
+## References
 
 [Saturn Control Pad](https://segaretro.org/Control_Pad_\(Saturn\))
 
