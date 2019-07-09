@@ -29,7 +29,7 @@ uint32_t ctrl_getidx_by_name(controller_t* ctrl, char name) {
 }
 
 
-uint32_t ctrl_match(controller_t* actrl, controller_t* bctrl) {
+controller_match_t ctrl_match(controller_t* actrl, controller_t* bctrl) {
   bool matches[actrl->size];
   bool used[bctrl->size];
 
@@ -51,6 +51,13 @@ uint32_t ctrl_match(controller_t* actrl, controller_t* bctrl) {
 
 
   }
+
+  for (uint32_t i = 0; i < bctrl->size; ++i) {
+    if (!used[i]) {
+
+    }
+  }
+
 
   // manual matches
   //strcmp(actrl->name, "")
@@ -75,5 +82,8 @@ uint32_t ctrl_match(controller_t* actrl, controller_t* bctrl) {
     }
   }
 
-  return kos;
+  controller_match_t m;
+  m.unmapped = kos;
+
+  return m;
 }

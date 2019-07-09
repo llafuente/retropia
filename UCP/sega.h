@@ -3,8 +3,9 @@
 
 #include "controller.h"
 
-#define SS_CONTROLLER_SIZE 13
-#define DREAMCAST_CONTROLLER_SIZE 13
+#define SEGA_SATURN_CONTROLLER_SIZE 13
+#define SEGA_DREAMCAST_CONTROLLER_SIZE 13
+#define SEGA_MASTER_SYSTEM_CONTROLLER_SIZE 6
 /*
 #define SS_CONTROLLER_START 0
 
@@ -25,8 +26,11 @@
 #define SS_CONTROLLER_Z 12
 */
 controller_t* create_sega_saturn_mk_80116();
-controller_t* create_dreamcast_hkt_7700();
+controller_t* create_sega_dreamcast_hkt_7700();
+controller_t* create_sega_master_system_model_3020();
 
+
+controller_t sega_master_system_model_3020;
 controller_t sega_saturn_mk_80116;
 controller_t sega_dreamcast_hkt_7700;
 
