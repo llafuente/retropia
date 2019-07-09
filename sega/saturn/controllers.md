@@ -32,6 +32,8 @@ D1, D0, D2, D3 are Data pins, nibble by nibble ( OUTPUT )
 
 ## Sega Saturn 6 buttons controller (MK-80100 / MK-80114 / MK-80116 / MK-80301 / MK-80313 / RG-CP5 / RG-CP6)
 
+<img src="./sega-saturn-controller.jpg" />
+
 S3 = 5v always
 
 | REQ | SEL | D0 | D1    | D2    | D3     |
@@ -54,11 +56,12 @@ S3 = 5v always
 | On   | Off | 0   | 0  | 0     | 0     | 0      |
 | Off  | Off | 1   | 1  | 0     | 0     | 0      |
 
-First byte: hello!
+It transfer 4 bytes:
 
-Second/Third byte: buttons state
-
-Fouth byte: bye!
+* hello
+* button state 1
+* button state 2
+* bye
 
 ## References
 

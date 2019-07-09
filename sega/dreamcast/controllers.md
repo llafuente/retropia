@@ -2,13 +2,9 @@
 
 ## Socket: Maple bus
 
+<img src="./sega-dreamcast-controller-socket-male.gif" />
+
 The Maple Bus transfers the data serially. The serial protocol is of the synchronous variant, where each bit is explicitly clocked. In contrast to standard synchronous protocols, which use one wire for data and one for clock, the Maple Bus uses a scheme in which the two wires take turn in representing data and clock. Due to this scheme, the bandwidth for each signal is just 1MHz
-
-## Controller (HKT-7700)
-
-<img src="sega-dreamcast-controller-socket-male.gif" />
-
-Pinouts
 
 | Pin | Cable color | Usage                                               |
 |-----|-------------|-----------------------------------------------------|
@@ -26,9 +22,17 @@ The comunication is done in two phases
 
 In each phase, which lasts for 0.5µs, a single bit of data is transferred
 
+## Controller (HKT-7700)
+
+<img src="./sega-dreamcast-controller-hk-7700.jpg" />
+
 ### VMU
 
-<img src="sega-dreamcast-controller-socket-female.gif" />
+<img src="./sega-Dreamcast-vmu.jpg" />
+
+#### VMU Socket
+
+<img src="./sega-dreamcast-controller-socket-female.gif" />
 
 ## Maple Bus: Protocol
 
