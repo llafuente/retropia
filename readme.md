@@ -74,3 +74,5 @@ Dreamcast VMU and N64 memory are the real problems atm. Still researching!
 ### Playstation 1 (PSOne, PSX)
 
 * [controllers](sony/psx/controllers.md)
+
+https://www.firebrandx.com/psxdigitalaudio.html
