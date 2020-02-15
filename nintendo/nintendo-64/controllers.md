@@ -17,9 +17,10 @@
 
 <img src="nintendo-64-controller-side-socket.jpg" />
 
-* 1: Ground
-* 2: Signal
-* 3: Vcc (3.3v)
+| Pin | Signal | Extension cable |
+|  1  | Ground | Black           |
+|  2  | Signal | White           |
+|  3  | 3v3    | Red             |
 
 NOTE. Vcc can be 3.3v, but console supplu 3.6v.
 We will use 3.3v because it's more common for implementing solutions.
@@ -28,12 +29,12 @@ We will use 3.3v because it's more common for implementing solutions.
 
 In its idle state the data line is high (3,3v).
 
-Each bit that is transmitted takes 4 μs of time.
+Each bit transmitted takes 4μs of time.
 
-| value | secuence |
-|-------|----------|
-| 1     | 0 1 1 1  |
-| 0     | 0 0 0 1  |
+| value | secuence (4μs) |
+|-------|----------------|
+| 1     | 0 1 1 1        |
+| 0     | 0 0 0 1        |
 
 <img src="nintendo-64-protocol.png" />
 
@@ -51,12 +52,12 @@ The controller responds with three bytes to identify itself.
 
 Response
 
-* first byte: 05
-* second byte: 00
+* first byte: 0x05
+* second byte: 0x05 (some: 0x00)
 * third byte:
-  * 01 if there is a controller pack plugged in.
-  * 02 if there is no controller pack.
-  * 04 if the previous controller read/write address CRC showed an error.
+  * 0x01 if there is a controller pack plugged in.
+  * 0x02 if there is no controller pack.
+  * 0x04 if the previous controller read/write address CRC showed an error.
 
 
 ### Status command (0x01)
@@ -120,6 +121,14 @@ Turn off
 [N64 read write complex example](https://code.google.com/archive/p/micro-64-controller/wikis/Protocol.wiki)
 
 [N64 protocol observations](http://svn.navi.cx/misc/trunk/wasabi/devices/cube64/notes/n64-observations)
+
+[N64 Controller protocol, very accurate](http://www.qwertymodo.com/hardware-projects/n64/n64-controller) [extra information about controller pak](http://www.qwertymodo.com/hardware-projects/n64/nonvolatile-nintendo-64-controller-pak)
+
+[More protocol info](http://www.mixdown.ca/n64dev/)
+
+[Checkpoint 1: N64 Controller](http://www-inst.eecs.berkeley.edu/~cs150/fa04/Lab/Checkpoint1.PDF)
+
+[detailed protocol graphs](http://www.fpgalover.com/ip-cores/n64-controller-module)
 
 ## Buy
 

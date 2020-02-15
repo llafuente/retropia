@@ -1,39 +1,44 @@
 # SNES Controllers
 
+## SHVC-005, SNS-005, SNESP-005
+
 <img src="./snes-controller.jpg" />
 
-## Pinout
+## Pinout (Console side)
 
 <img src="./snes-controller-socket.jpg" />
 
-| Pin | Description | Color of wire in cable  |
-| === | =========== | ======================  |
-| 1   | +5v         | White                   |
-| 2   | Data clock  | Yellow                  |
-| 3   | Data latch  | Orange                  |
-| 4   | Serial data | Red                     |
-| 5   | ?           | no wire                 |
-| 6   | ?           | no wire                 |
-| 7   | Ground      | Brown                   |
+> ╭────────╮
+> │1234|567|
+> ╰────────╯
+
+
+| Pin | Description | Color [1]  | Color [2] |
+| === | =========== | ========== | ========= |
+| 1   | +5v         | White      | Green     |
+| 2   | Data clock  | Yellow     | yellow    |
+| 3   | Data latch  | Orange     | white     |
+| 4   | Serial data | Red        | red       |
+|-----|-------------|------------|-----------|
+| 5   | ?           | no wire    |           |
+| 6   | ?           | no wire    |           |
+| 7   | Ground      | Brown      | black     |
+
+
+[1] Original pad
+[2] Extension
 
 # Protocol
 
-Every 16.67ms (or about 60Hz), the SNES CPU sends out a 12us wide, positive
+Every 16.67ms (or about 60Hz), the SNES CPU sends out a 12μs wide, positive
 going data latch pulse on pin 3. This instructs the ICs in the controller
-to latch the state of all buttons internally. Six microsenconds after the
+to latch the state of all buttons internally. 6μs after the
 fall of the data latch pulse, the CPU sends out 16 data clock pulses on
-pin 2. These are 50% duty cycle with 12us per full cycle. The controllers
+pin 2. These are 50% duty cycle with 12μs per full cycle. The controllers
 serially shift the latched button states out pin 4 on every rising edge
 of the clock, and the CPU samples the data on every falling edge.
 
-Each button on the controller is assigned a specific id which corresponds
-to the clock cycle during which that button's state will be reported.
-The table in section 4.0 lists the ids for all buttons. Note that
-multiple buttons may be depressed at any given moment. Also note
-that a logic "high" on the serial data line means the button is NOT
-depressed.
-
-
+NOTE: "High" means the button is NOT depressed.
 
 At the end of the 16 cycle sequence, the serial data line is driven low
 until the next data latch pulse. The only slight deviation from this
