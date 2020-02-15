@@ -6,15 +6,22 @@
 
 ## Pinout (Console side)
 
+### Connector / Socket
+
 <img src="./snes-controller-socket.jpg" />
 
-> ╭────────╮
-> │1234|567|
-> ╰────────╯
+```
+╭────────╮
+│○○○○|○○○|
+╰────────╯
+╭────────╮
+│1234|567|
+╰────────╯
+```
 
 
 | Pin | Description | Color [1]  | Color [2] |
-| === | =========== | ========== | ========= |
+| --- | ----------- | ---------- | --------- |
 | 1   | +5v         | White      | Green     |
 | 2   | Data clock  | Yellow     | yellow    |
 | 3   | Data latch  | Orange     | white     |
@@ -53,7 +60,7 @@ serve to illustrate this. Only 4 of the 16 clock cycles are shown for
 brevity.
 
 | Clock Cycle | Button Reported    |
-| =========== | ===============    |
+| ----------- | ------------------ |
 | 1           | B                  |
 | 2           | Y                  |
 | 3           | Select             |

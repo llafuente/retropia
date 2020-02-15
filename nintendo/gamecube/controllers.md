@@ -5,6 +5,7 @@
 <img src="./gamecube-controller-side-socket.gif">
 
 | Pin | Color[1]  | Color[2]   | J1 | Function                                                            |
+| --- | --------- | ---------- | -- | ------------------------------------------------------------------- |
 | 1   | Yellow    | White      | 2  | 5V                                                                  |
 | 2   | Red       | Red/Orange | 3  | DATA line: bi-directional data to/from console, pull-up to 3.43V    |
 | 3   | Green     | Yellow     | 4  | Ground.                                                             |

@@ -1,23 +1,28 @@
 # Nintendo nes controller
 
-## NES-004
+## NES-004 / NES-004E
 
 ## Connector / Socket
 
-> ╭──────╮
-> │◎◎◎◎╱
-> │◎◎◎╱
-> ╰───╯
+### Console/Pad side
 
-## Pinout / Cable
+```
+╭──────╮
+│○○○○ ╱
+│○○○ ╱
+╰───╯
 
-> ╭──────╮
-> │1234 ╱
-> │567 ╱
-> ╰───╯
+╭──────╮
+│1234 ╱
+│567 ╱
+╰───╯
+```
+
+### Cable
+
 
 | Pin | What   | Color [2] | Color [1] |
-| === | ====== | ========= | ========= |
+| --- | ------ | --------- | --------- |
 |  1  | Data   | Red       | Black     |
 |  2  | Latch  | Black     | Yellow    |
 |  3  | Clock  | Orange    | Green     |
@@ -32,9 +37,7 @@ same layout maybe I'm lucky :)
 
 *NOTE* Nintendo original VCC is 5v, but works with 3.3v
 
-## Single controller Protocol
-
-<img src="./nes-data.gif" />
+### Protocol
 
 The NES controller use a shift register: 4021
 
@@ -43,7 +46,7 @@ The NES main unit polls data at 60 Hz (NTSC) 50 Hz (Europe)
 <img src="./nes-data.gif" />
 
 | Signals                           | Button Reported    |
-| ================================= | ===============    |
+| --------------------------------- | ------------------ |
 | Latch  (12μs high, read, 6μs low) | A                  |
 | Clock 1 (6μs high, read, 6μs low) | B                  |
 | Clock 2 (6μs high, read, 6μs low) | Select             |

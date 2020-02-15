@@ -3,27 +3,29 @@
 <img src="nintendo-64-controller.jpg" />
 <img src="nintendo-64-controller-2.jpg" />
 
-## nintendo 64 controller connector/socket
+## Connector / Socket
 
 ### Console side
 
 <img src="nintendo-64-console-side-socket.jpg" />
 
-* 1: Vcc (3.3v)
-* 2: Signal
-* 3: Ground
+| Pin | Signal  |
+| --- | ------- |
+|  1  | Vcc 3v3 |
+|  2  | Signal  |
+|  3  | Ground  |
 
 ### Controller side:
 
 <img src="nintendo-64-controller-side-socket.jpg" />
 
-| Pin | Signal | Extension cable |
-|  1  | Ground | Black           |
-|  2  | Signal | White           |
-|  3  | 3v3    | Red             |
+| Pin | Signal  | Extension cable |
+| --- | ------- | --------------- |
+|  1  | Ground  | Black           |
+|  2  | Signal  | White           |
+|  3  | Vcc 3v3 | Red             |
 
-NOTE. Vcc can be 3.3v, but console supplu 3.6v.
-We will use 3.3v because it's more common for implementing solutions.
+*NOTE*. Nintendo 64 provides 3.6v.
 
 ## Protocol
 

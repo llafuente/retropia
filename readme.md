@@ -21,10 +21,6 @@ Dreamcast VMU and N64 memory are the real problems atm. Still researching!
 
 ## Nintendo
 
-### Gamecube
-
-* [controllers](nintendo/gamecube/controllers.md)
-
 ### NES
 
 * [controllers](nintendo/nes/controllers.md)
@@ -39,18 +35,11 @@ Dreamcast VMU and N64 memory are the real problems atm. Still researching!
 * [controllers](nintendo/nintendo-64/controllers.md)
 * [RGB](nintendo/nintendo-64/rgb.md)
 
+### Gamecube
+
+* [controllers](nintendo/gamecube/controllers.md)
+
 ## Sega
-
-### Dreamcast
-
-* [Bios](sega/dreamcast/bios.md)
-* [controllers](sega/dreamcast/controllers.md)
-* [hdd](sega/dreamcast/hdd.md)
-
-### Game gear
-
-* [Backlight using DS screen](sega/game-gear/ds-backlight.md)
-* [Uso lipo batteries](sega/game-gear/li-po-batteries.md)
 
 ### Master System
 
@@ -64,10 +53,21 @@ Dreamcast VMU and N64 memory are the real problems atm. Still researching!
 * [controllers](sega/megadrive/controllers.md)
 * [RGB](sega/megadrive/rgb.md)
 
+### Game gear
+
+* [Backlight using DS screen](sega/game-gear/ds-backlight.md)
+* [Uso lipo batteries](sega/game-gear/li-po-batteries.md)
+
 ### Saturn
 
 * [controllers](sega/saturn/controllers.md)
 * [RGB](sega/saturn/rgb.md)
+
+### Dreamcast
+
+* [Bios](sega/dreamcast/bios.md)
+* [controllers](sega/dreamcast/controllers.md)
+* [hdd](sega/dreamcast/hdd.md)
 
 ## Sony
 
