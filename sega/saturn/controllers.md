@@ -7,22 +7,25 @@
 ## Female socket (console)
 
 ```
-/-----------\
+╭───────────╮
 | 987654321 |
-|___________|
+└───────────┘
 ```
 
-| pin # | Name | Function                    |
-|-------|------| ----------------------------|
-| 1     | VCC  | +5v (Out)                   |
-| 2     | D1   | Data 1                      |
-| 3     | D0   | Data 0                      |
-| 4     | S0   | Request (Select 1, aka TR)  |
-| 5     | S1   | Select (Select 0, aka TH)   |
-| 6     | S3   | Acknowledge (TL)            |
-| 7     | D3   | Data 3                      |
-| 8     | D2   | Data 2                      |
-| 9     | GND  | Ground                      |
+
+| pin # | Name | Function                    | Color[1] |
+|-------|------| ----------------------------|----------|
+| 1     | VCC  | +5v (Out)                   | Red      |
+| 2     | D1   | Data 1 (D)                  | White    |
+| 3     | D0   | Data 0 (U)                  | Yellow   |
+| 4     | S0   | Request (Select 1 / TR)     | Orange   |
+| 5     | S1   | Select (Select 0 / TH)      | Blue     |
+| 6     | S3   | Acknowledge (TL)            | Green    |
+| 7     | D3   | Data 3 (R)                  | Black    |
+| 8     | D2   | Data 2 (L)                  | Brown    |
+| 9     | GND  | Ground                      | Purple   |
+
+[1] Extension cable colors (not original pad)
 
 S0, S1 are console signal pins ( INPUT )
 
@@ -34,7 +37,7 @@ D1, D0, D2, D3 are Data pins, nibble by nibble ( OUTPUT )
 
 <img src="./sega-saturn-controller.jpg" />
 
-S3 = 5v always
+ACK = 5v always
 
 | REQ | SEL | D0 | D1    | D2    | D3     |
 |-----|-----|----|-------|-------|--------|
@@ -43,20 +46,20 @@ S3 = 5v always
 | Off | On  | Up | Down  | Left  | Right  |
 | On  | On  | -  |  -    |  -    | L      |
 
-## 3D Control pad (Mk-80117 / HSS-0137)
+## 3D Control pad (MK-80117 / HSS-0137)
 
 | REQ  | SEL | ACK | D0 | D1    | D2    | D3     |
 |------|-----|-----|----|-------|-------|--------|
 | On   | On  | 0   | 0  | 0     | 0     | 0      |
 | Off  | Off | 1   | 0  | 1     | 0     | 0      |
 | On   | Off | 0   | Up | Down  | Left  | Right  |
-| Off  | Off | 1   | C  | B     | A     | Start  |
+| Off  | Off | 1   | B  | C     | A     | Start  |
 | On   | Off | 0   | Z  | Y     | X     | R/1    |
 | Off  | Off | 1   | 1  | 1     | 1     | L/1    |
 | On   | Off | 0   | 0  | 0     | 0     | 0      |
 | Off  | Off | 1   | 1  | 0     | 0     | 0      |
 
-It transfer 4 bytes:
+It transfer 4 bytes (8 nibbles):
 
 * hello
 * button state 1
@@ -64,6 +67,8 @@ It transfer 4 bytes:
 * bye
 
 ## References
+
+[SMPC User's Manual - Page 86-103](https://antime.kapsi.fi/sega/files/ST-169-R1-072694.pdf) This document contains everything!
 
 [Saturn Control Pad](https://segaretro.org/Control_Pad_\(Saturn\))
 
@@ -82,3 +87,10 @@ It transfer 4 bytes:
 [Saturn_Controller_Demux](https://github.com/Arthrimus/Saturn_Controller_Demux/blob/master/saturn_controller_demux/saturn_controller_demux.ino)
 
 [Saturn 3d impl](https://github.com/fluxcorenz/UPCB/blob/master/saturn3d.c)
+
+https://github.com/NoahSteam/RomHackingTools/blob/cff6a1ae12b3106e705e3749ecc98589f399b287/Docs/Saturn/SaturnMemory.txt#L125
+
+https://www.raphnet.net/electronique/saturn_usb/index_en.php
+
+
+http://spritesmods.com/?art=xpad&page=5
