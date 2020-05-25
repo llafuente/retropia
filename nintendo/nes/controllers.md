@@ -2,7 +2,7 @@
 
 ## NES-004 / NES-004E
 
-## Connector / Socket
+## 7pin controller port
 
 ### Console/Pad side
 
@@ -43,7 +43,15 @@ The NES controller use a shift register: 4021
 
 The NES main unit polls data at 60 Hz (NTSC) 50 Hz (Europe)
 
-<img src="./nes-data.gif" />
+```
+       │18μs    │12μs │12μs │12μs │12μs │12μs │12μs │12μs │12μs │
+       ┌─────┐
+Lacth ─┘     └──────────────────────────────────────────────────
+                ┌──┐  ┌──┐  ┌──┐  ┌──┐  ┌──┐  ┌──┐  ┌──┐  ┌──┐
+Clock ──────────┘  └──┘  └──┘  └──┘  └──┘  └──┘  └──┘  └──┘  └──
+Data   │      A │  B  │ SEL │ STA │ UP  │ DW  │ LF  │ RG  │
+```
+
 
 | Signals                           | Button Reported    |
 | --------------------------------- | ------------------ |
@@ -60,14 +68,28 @@ The NES main unit polls data at 60 Hz (NTSC) 50 Hz (Europe)
 *NOTE* I read in many sites, that there is 7 clock pulses.
 You need 8 for `nes-004e` and other generic controllers.
 If you don't send it the shift register doesn't properly reset...
+*NOTE* You can fetch information faster than 12μs cycle duty at least on
+normal controllers.
 
 ## Four score protocol
 
-TODO
+write "1-then-0" to (4016h) (that only once, for all 24 bits)
+read 1st 8 bits: controller 1    (4016h) / controller 2   (4017h) (as normal)
+read 2nd 8 bits: controller 3    (4016h) / controller 4   (4017h) (new ports)
+read 3rd 8 bits: 0,0,0,1,0,0,0,0 (4016h) / 0,0,1,0,0,0,0,0 (4017h) (ID codes)
+further bits: unknown (probably all 0, or all 1)
+
 
 ## Light Gun protocol (Zapper)
 
-TODO
+| Pin | What               |
+| --- | ------             |
+| D3  | Zapper light sense: 0=High=Light detected, 1=Low=None) |
+| D4  | Zapper trigger :0=High=Released, 1=Low=Pulse. shoot on 1-to-0 transition |
+
+  Bit3  State of the gun sight
+  Bit4  Trigger
+
 
 ## References
 
@@ -84,3 +106,5 @@ TODO
 * [NES Controller Compatibility](https://tetrissuomi.wordpress.com/english/nes-controller-compatibility/)
 
 * [Zapper on LCD](http://neslcdmod.com/)
+
+* [Many nes hardware protocols](https://web.archive.org/web/20130305224043/http://nocash.emubase.de/everynes.htm)
