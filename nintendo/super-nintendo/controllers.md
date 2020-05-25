@@ -23,9 +23,9 @@
 | Pin | Description | Color [1]  | Color [2] |
 | --- | ----------- | ---------- | --------- |
 | 1   | +5v         | White      | Green     |
-| 2   | Data clock  | Yellow     | yellow    |
-| 3   | Data latch  | Orange     | white     |
-| 4   | Serial data | Red        | red       |
+| 2   | Clock       | Yellow     | yellow    |
+| 3   | Latch       | Orange     | white     |
+| 4   | Data        | Red        | red       |
 |-----|-------------|------------|-----------|
 | 5   | ?           | no wire    |           |
 | 6   | ?           | no wire    |           |
